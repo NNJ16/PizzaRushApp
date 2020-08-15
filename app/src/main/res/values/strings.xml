@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Pizza Rush</string>
+    <string name="msg_welcome">Welcome to Pizza Rush</string>
+    <string name="msg_popularDeals">Our Most Popular Deals</string>
+    <string name="btn_name_view_deals">View All Deals</string>
+    <string name="btn_Sign_name">Sign in / Register</string>
+    <string name="lbl_username">Username *</string>
+    <string name="lbl_pass">Password *</string>
+    <string name="txt_uname">Enter email</string>
+    <string name="txt_pass">Enter password</string>
+    <string name="btn_log">Log in with Pizza Rush</string>
+    <string name="msg_create_account">Didn\'t have and account *</string>
+    <string name="btn_create_account">Create an Account</string>
+    <string name="btn_guest">Continue as a Guest</string>
+    <string name="lbl_fname">First name *</string>
+    <string name="lbl_lname">Last name *</string>
+    <string name="lbl_phone">Phone no *</string>
+    <string name="lbl_email">Email *</string>
+    <string name="lbl_cpass">Confirm Password *</string>
+    <string name="btn_register">Register</string>
+    <string name="msg_become_memeber">BECOME A MEMBER</string>
+    <string name="txt_fname">Enter First Name</string>
+    <string name="txt_lname">Enter Last Name</string>
+    <string name="txt_email">Enter Your Email</string>
+    <string name="msg_profile">My Profile</string>
+    <string name="btn_save">Save Changes</string>
+    <string name="lbl_member_lvl">Member Level</string>
+    <string name="lbl_points">Points</string>
+    <string name="lbl_member_lv_value">Gold</string>
+    <string name="lbl_points_value">150</string>
+    <string name="txt_pfname">John</string>
+    <string name="txt_plname">Doe</string>
+    <string name="txt_pphone">0701111111</string>
+    <string name="txt_pmail">John@mail.com</string>
+</resources>
