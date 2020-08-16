@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLight"
     tools:context=".login">
 
     <TextView
@@ -18,7 +19,7 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -42,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -57,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnCreate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -72,23 +73,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnGuset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@color/colorRed"
         android:text="@string/btn_guest"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCreate" />
 
     <EditText
         android:id="@+id/editText3"
-        android:hint="@string/txt_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -96,8 +96,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/txt_pass"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnLog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +111,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="24dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btnLog"
         tools:layout_editor_absoluteX="8dp" />
 
     <TextView

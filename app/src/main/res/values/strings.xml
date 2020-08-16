@@ -22,7 +22,8 @@
     <string name="txt_fname">Enter First Name</string>
     <string name="txt_lname">Enter Last Name</string>
     <string name="txt_email">Enter Your Email</string>
-    <string name="msg_profile">My Profile</string>
+    <string name="txt_phone">Enter Your Mobile No</string>
+    <string name="msg_profile">Profile</string>
     <string name="btn_save">Save Changes</string>
     <string name="lbl_member_lvl">Member Level</string>
     <string name="lbl_points">Points</string>
@@ -32,4 +33,11 @@
     <string name="txt_plname">Doe</string>
     <string name="txt_pphone">0701111111</string>
     <string name="txt_pmail">John@mail.com</string>
+    <string name="view_home">HOME</string>
+    <string name="view_menu">MENU</string>
+    <string name="view_deals">DEALS</string>
+    <string name="view_contact">CONTACT US</string>
+    <string name="view_logout">LOG OUT</string>
+    <string name="view_terms">TERMS AND CONDITIONS</string>
+    <string name="txt_member">Member Center</string>
 </resources>
