@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "146528414241",
+    "firebase_url": "https://pizzarush-a8aa6.firebaseio.com",
+    "project_id": "pizzarush-a8aa6",
+    "storage_bucket": "pizzarush-a8aa6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146528414241:android:df6738814968ed5a615160",
+        "android_client_info": {
+          "package_name": "com.example.pizzarush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146528414241-94925s7n2kh3rjoqjmtqs2jbrjeph3gm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pizzarush",
+            "certificate_hash": "2f6420626c70e517b3c9a8e8fec6770348bd7dfe"
+          }
+        },
+        {
+          "client_id": "146528414241-qco2u28fo7clsnl8ltclcms193qrqh42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzFcURNjigQNjQafiUcT3S8-V4UuiiEkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146528414241-qco2u28fo7clsnl8ltclcms193qrqh42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
