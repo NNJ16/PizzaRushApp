@@ -17,6 +17,7 @@ import com.example.pizzarush.Admin;
 import com.example.pizzarush.Entity.CustomerUtil;
 import com.example.pizzarush.Entity.Point;
 
+import com.example.pizzarush.OrderActivity.LocationActivity;
 import com.example.pizzarush.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -86,7 +87,7 @@ public class login extends AppCompatActivity {
                                         {
                                             CustomerUtil.setCid(cid);
                                             CustomerUtil.setMobile(mobile);
-                                            Intent intent = new Intent(login.this, menu.class);
+                                            Intent intent = new Intent(login.this, LocationActivity.class);
                                             startActivity(intent);
 
                                         }else
