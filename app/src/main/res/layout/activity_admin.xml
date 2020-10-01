@@ -30,7 +30,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:background="@color/colorOrangeR"
-        android:text="Deliver Management"
+        android:text="Delivery Management"
         android:textColor="@color/colorWhite"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
