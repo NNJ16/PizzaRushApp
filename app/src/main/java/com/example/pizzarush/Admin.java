@@ -1,30 +1,30 @@
 package com.example.pizzarush;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.pizzarush.CustomerActivity.login;
+import androidx.appcompat.app.AppCompatActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Admin extends AppCompatActivity {
 
-    Button btnSign;
+    Button btnItem,btnDel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btnSign = (Button)findViewById(R.id.btnSign);
+        setContentView(R.layout.activity_admin);
+        btnDel = findViewById(R.id.btn_delM);
+        btnItem = findViewById(R.id.btn_itemM);
 
-        btnSign.setOnClickListener(new View.OnClickListener() {
+        btnDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, login.class);
-                startActivity(intent);
+//                Intent intent = new Intent(Admin.this, Delivery.class);
+//                startActivity(intent);
             }
         });
     }

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Pizza Rush</string>
+    <string name="app_name">PizzaRush</string>
+    <string name="channel_name">My Channel</string>
+    <string name="channel_description">My Description</string>
     <string name="msg_welcome">Welcome to Pizza Rush</string>
     <string name="msg_popularDeals">Our Most Popular Deals</string>
     <string name="btn_name_view_deals">View All Deals</string>

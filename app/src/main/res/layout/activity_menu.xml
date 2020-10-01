@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLight"
-    tools:context=".menu">
+    tools:context=".CustomerActivity.menu">
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btnDeals"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -19,10 +19,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMenu" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/btnContact"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -33,10 +33,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDeals" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/btnTerms"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -47,10 +47,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
+        app:layout_constraintTop_toBottomOf="@+id/btnContact" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnHome"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnLogOut"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -75,10 +75,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTerms" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnMenu"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -89,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/btnHome" />
 
     <ImageButton
         android:id="@+id/imageButton6"
