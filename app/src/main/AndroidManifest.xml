@@ -16,9 +16,13 @@
         <activity android:name=".Admin"></activity>
         <activity android:name=".CustomerActivity.menu"></activity>
         <activity android:name=".CustomerActivity.Register" />
-
         <activity android:name=".CustomerActivity.login" />
         <activity android:name=".CustomerActivity.Profile" />
+        <activity android:name=".OrderActivity.Order_Menu_Activity"/>
+        <activity android:name=".OrderActivity.place_order_pizza"/>
+        <activity android:name=".OrderActivity.Summary_Activity"/>
+        <activity android:name=".OrderActivity.place_order_beverages"/>
+        <activity android:name=".OrderActivity.LocationActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
