@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".manageitem.update_item">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".manageitem.add_item">
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Upload Image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerItemType" />
+
+        <EditText
+            android:id="@+id/txt_uprice"
+            android:layout_width="141dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="33dp"
+            android:background="@color/colorLightGrey2"
+            android:backgroundTint="@color/colorLightGrey2"
+            android:drawableTint="@color/colorLightGrey2"
+            android:ems="10"
+            android:foregroundTint="@color/colorLightGrey2"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26"
+            tools:textColorHint="@color/colorWhite" />
+
+        <EditText
+            android:id="@+id/txt_uid"
+            android:layout_width="313dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorLightGrey2"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            tools:textColorHint="@color/colorWhite" />
+
+        <EditText
+            android:id="@+id/txt_udescription"
+            android:layout_width="313dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="48dp"
+            android:background="@color/colorLightGrey2"
+            android:backgroundTint="@color/colorLightGrey2"
+            android:drawableTint="@color/colorLightGrey2"
+            android:ems="10"
+            android:foregroundTint="@color/colorLightGrey2"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView23"
+            tools:textColorHint="@color/colorWhite" />
+
+        <EditText
+            android:id="@+id/txt_uingre"
+            android:layout_width="312dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="48dp"
+            android:background="@color/colorLightGrey2"
+            android:backgroundTint="@color/colorLightGrey2"
+            android:drawableTint="@color/colorLightGrey2"
+            android:ems="10"
+            android:foregroundTint="@color/colorLightGrey2"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            tools:textColorHint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/title_update_item"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="36dp"
+            android:text="@string/lbl_itemID"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="13dp"
+            android:text="@string/lbl_itemName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_uid" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/lbl_itemIngredients"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_uname" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/lbl_itemDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_uingre" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/lbl_itemType"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_udescription" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="103dp"
+            android:text="@string/lbl_itemPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_udescription" />
+
+        <EditText
+            android:id="@+id/txt_uname"
+            android:layout_width="313dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/colorLightGrey2"
+            android:backgroundTint="@color/colorLightGrey2"
+            android:drawableTint="@color/colorLightGrey2"
+            android:ems="10"
+            android:foregroundTint="@color/colorLightGrey2"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21"
+            tools:textColorHint="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btn_uadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="59dp"
+            android:background="@color/colorGreen"
+            android:text="@string/btn_update"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_uimgid" />
+
+        <Button
+            android:id="@+id/btn_ucancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="116dp"
+            android:layout_marginEnd="72dp"
+            android:background="@color/colorRed"
+            android:text="@string/btn_cancell"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_uprice" />
+
+        <TextView
+            android:id="@+id/txt_uimgid"
+            android:layout_width="309dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginBottom="59dp"
+            android:background="@color/colorLightGrey2"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/btn_uadd"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <Spinner
+            android:id="@+id/spinnerItemType"
+            android:layout_width="141dp"
+            android:layout_height="19dp"
+            android:layout_below="@+id/txttitle"
+            android:layout_marginStart="47dp"
+            android:background="@color/colorLightGrey2"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">\
+        <activity android:name=".ItemActivity.add_item"/>
+        <activity android:name=".ItemActivity.update_item"/>
+        <activity android:name=".ItemActivity.view_item"/>
+        <activity android:name=".ItemActivity.itemmenu"/>
         <activity android:name=".Admin"></activity>
         <activity android:name=".CustomerActivity.menu"></activity>
         <activity android:name=".CustomerActivity.Register" />

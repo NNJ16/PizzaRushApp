@@ -42,4 +42,24 @@
     <string name="view_logout">LOG OUT</string>
     <string name="view_terms">TERMS AND CONDITIONS</string>
     <string name="txt_member">Member Center</string>
+    <string name="btn_add">ADD</string>
+    <string name="btn_view">VIEW</string>
+    <string name="title_itemmanagement">Item Management</string>
+    <string name="title_additem">Add Item</string>
+    <string name="lbl_itemID">Item ID*</string>
+    <string name="lbl_itemName">Item Name*</string>
+    <string name="lbl_itemIngredients">Item Ingredients*</string>
+    <string name="lbl_itemDescription">Item Description*</string>
+    <string name="lbl_itemType">Item Type*</string>
+    <string name="lbl_itemPrice">Item Price*</string>
+    <string name="txt_itemid">Enter Item ID</string>
+    <string name="txt_itemName">Enter Item Name</string>
+    <string name="txt_itemDescription">Enter Item Description</string>
+    <string name="txt_itemIngredients">Enter Item Ingredients</string>
+    <string name="txt_itemPrice">Enter Item Price</string>
+    <string name="btn_cancell">Cancel</string>
+    <string name="title_update_item">Update Item</string>
+    <string name="btn_update">UPDATE</string>
+    <string name="title_view_item">View Item</string>
+    <string name="txt_searchid">Enter Item ID</string>
 </resources>
