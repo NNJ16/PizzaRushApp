@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorLight"
         android:orientation="vertical">
 
         <LinearLayout
@@ -36,8 +37,8 @@
                 android:id="@+id/txtidS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
                 android:ems="10"
+                android:enabled="false"
                 android:hint="ID"
                 android:inputType="textPersonName" />
 
@@ -45,8 +46,8 @@
                 android:id="@+id/txtdesS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
                 android:ems="10"
+                android:enabled="false"
                 android:hint="Description"
                 android:inputType="textPersonName" />
 
@@ -54,8 +55,8 @@
                 android:id="@+id/txtamountS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
                 android:ems="10"
+                android:enabled="false"
                 android:hint="Total Amount"
                 android:inputType="textPersonName" />
 

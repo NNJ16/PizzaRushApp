@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pizzarush.DeliverActivity.Delivery;
 import com.example.pizzarush.ItemActivity.itemmenu;
 
 
@@ -26,6 +27,14 @@ public class Admin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Admin.this, itemmenu.class);
+                startActivity(intent);
+            }
+        });
+
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Admin.this, Delivery.class);
                 startActivity(intent);
             }
         });

@@ -2,20 +2,29 @@ package com.example.pizzarush.OrderActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pizzarush.CustomerActivity.Profile;
+import com.example.pizzarush.CustomerActivity.menu;
 import com.example.pizzarush.Entity.CustomerUtil;
 import com.example.pizzarush.Entity.Order;
 import com.example.pizzarush.Entity.OrderItem;
+import com.example.pizzarush.Entity.Point;
 import com.example.pizzarush.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class place_order_beverages extends AppCompatActivity {
@@ -26,7 +35,6 @@ public class place_order_beverages extends AppCompatActivity {
     DatabaseReference dbref;
     Order order;
     OrderItem orderItem;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +65,73 @@ public class place_order_beverages extends AppCompatActivity {
                 String sdes = des.getText().toString();
                 Order order = new Order(sdes,stotal,cid);
                 dbref.child(cid).setValue(order);
+
+                // Add Customer Points
+                String cusid = CustomerUtil.getCid();
+                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Point").child(cusid);
+                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChildren())
+                        {
+                            String mLevel = dataSnapshot.child("mLevel").getValue().toString();
+                            int points = Integer.parseInt(dataSnapshot.child("points").getValue().toString());
+                            points += 50;
+
+                            if(points>500)
+                            {
+                                mLevel = "Silver";
+                            }else if(points>1000)
+                            {
+                                mLevel = "Gold";
+                            }else if(points>2000)
+                            {
+                                mLevel = "Platinum";
+                            }else if(points>5000)
+                            {
+                                mLevel = "Diamond";
+                            }
+                            Point point = new Point(mLevel,points);
+                            String cid = CustomerUtil.getCid();
+                            dbref = FirebaseDatabase.getInstance().getReference().child("Point").child(cid);
+                            dbref.setValue(point);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
                 Toast.makeText(getApplicationContext(),"Data  Save Successful",Toast.LENGTH_SHORT).show();
+
             }
         });
 
 
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if(item.getItemId() == R.id.profile)
+        {
+            Intent intent = new Intent(place_order_beverages.this, Profile.class);
+            startActivity(intent);
+        }else if(item.getItemId() == R.id.menu)
+        {
+            Intent intent = new Intent(place_order_beverages.this, menu.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
     public void onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
 

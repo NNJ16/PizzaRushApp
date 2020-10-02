@@ -10,13 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorLight"
         tools:context=".manageitem.add_item">
 
         <TextView
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="Upload Image"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +27,7 @@
             android:id="@+id/txt_uprice"
             android:layout_width="141dp"
             android:layout_height="19dp"
-            android:layout_marginEnd="33dp"
+            android:layout_marginEnd="40dp"
             android:background="@color/colorLightGrey2"
             android:backgroundTint="@color/colorLightGrey2"
             android:drawableTint="@color/colorLightGrey2"
@@ -38,17 +39,28 @@
             app:layout_constraintTop_toBottomOf="@+id/textView26"
             tools:textColorHint="@color/colorWhite" />
 
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="240dp"
+            android:text="@string/lbl_itemPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_udescription" />
+
         <EditText
             android:id="@+id/txt_uid"
             android:layout_width="313dp"
             android:layout_height="25dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:background="@color/colorLightGrey2"
             android:ems="10"
             android:inputType="textPersonName"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/colorBlack"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19"
             tools:textColorHint="@color/colorWhite" />
@@ -57,7 +69,8 @@
             android:id="@+id/txt_udescription"
             android:layout_width="313dp"
             android:layout_height="47dp"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:background="@color/colorLightGrey2"
             android:backgroundTint="@color/colorLightGrey2"
             android:drawableTint="@color/colorLightGrey2"
@@ -66,6 +79,7 @@
             android:inputType="textPersonName"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView23"
             tools:textColorHint="@color/colorWhite" />
@@ -74,7 +88,8 @@
             android:id="@+id/txt_uingre"
             android:layout_width="312dp"
             android:layout_height="47dp"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:background="@color/colorLightGrey2"
             android:backgroundTint="@color/colorLightGrey2"
             android:drawableTint="@color/colorLightGrey2"
@@ -83,6 +98,7 @@
             android:inputType="textPersonName"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView22"
             tools:textColorHint="@color/colorWhite" />
@@ -104,7 +120,7 @@
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="36dp"
             android:text="@string/lbl_itemID"
             app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +130,7 @@
             android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="13dp"
             android:text="@string/lbl_itemName"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +140,7 @@
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
             android:text="@string/lbl_itemIngredients"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,7 +150,7 @@
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="18dp"
             android:text="@string/lbl_itemDescription"
             app:layout_constraintStart_toStartOf="parent"
@@ -144,28 +160,19 @@
             android:id="@+id/textView25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="18dp"
             android:text="@string/lbl_itemType"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_udescription" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="103dp"
-            android:text="@string/lbl_itemPrice"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_udescription" />
 
         <EditText
             android:id="@+id/txt_uname"
             android:layout_width="313dp"
             android:layout_height="25dp"
-            android:layout_marginStart="47dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="1dp"
+            android:layout_marginEnd="32dp"
             android:background="@color/colorLightGrey2"
             android:backgroundTint="@color/colorLightGrey2"
             android:drawableTint="@color/colorLightGrey2"
@@ -173,6 +180,7 @@
             android:foregroundTint="@color/colorLightGrey2"
             android:inputType="textPersonName"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView21"
             tools:textColorHint="@color/colorWhite" />
@@ -203,13 +211,15 @@
 
         <TextView
             android:id="@+id/txt_uimgid"
-            android:layout_width="309dp"
+            android:layout_width="313dp"
             android:layout_height="22dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:layout_marginBottom="59dp"
             android:background="@color/colorLightGrey2"
             android:textColor="@color/colorWhite"
             app:layout_constraintBottom_toTopOf="@+id/btn_uadd"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
@@ -218,7 +228,7 @@
             android:layout_width="141dp"
             android:layout_height="19dp"
             android:layout_below="@+id/txttitle"
-            android:layout_marginStart="47dp"
+            android:layout_marginStart="32dp"
             android:background="@color/colorLightGrey2"
             android:textColor="@color/colorWhite"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,4 +1,4 @@
-package com.example.pizzarush.ItemActivity;
+package com.example.pizzarush.Entity;
 
 public class Item {
     String id;

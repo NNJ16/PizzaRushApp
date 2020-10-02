@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.pizzarush.Entity.CustomerUtil;
 import com.example.pizzarush.Entity.Order;
 import com.example.pizzarush.Entity.OrderItem;
+import com.example.pizzarush.Entity.Point;
 import com.example.pizzarush.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -112,6 +113,44 @@ public class Summary_Activity extends AppCompatActivity {
                         {
                             dbref = FirebaseDatabase.getInstance().getReference().child("Order").child(sid);
                             dbref.removeValue();
+                            //Remove Customer Points
+                            String cusid = CustomerUtil.getCid();
+                            DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Point").child(cusid);
+                            readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if(dataSnapshot.hasChildren())
+                                    {
+                                        String mLevel = dataSnapshot.child("mLevel").getValue().toString();
+                                        int points = Integer.parseInt(dataSnapshot.child("points").getValue().toString());
+                                        points -= 50;
+
+                                        if(points>500)
+                                        {
+                                            mLevel = "Silver";
+                                        }else if(points>1000)
+                                        {
+                                            mLevel = "Gold";
+                                        }else if(points>2000)
+                                        {
+                                            mLevel = "Platinum";
+                                        }else if(points>5000)
+                                        {
+                                            mLevel = "Diamond";
+                                        }
+                                        Point point = new Point(mLevel,points);
+                                        String cid = CustomerUtil.getCid();
+                                        dbref = FirebaseDatabase.getInstance().getReference().child("Point").child(cid);
+                                        dbref.setValue(point);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+
                             Toast.makeText(getApplicationContext(),"Delete Successfully ",Toast.LENGTH_SHORT).show();
                             Intent intent =new Intent (Summary_Activity.this, Order_Menu_Activity.class);
                             startActivity(intent);

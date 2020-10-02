@@ -50,6 +50,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorLight"
                     android:orientation="vertical" />
 
                 <LinearLayout
@@ -61,6 +62,7 @@
                         android:id="@+id/imageView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorLight"
                         app:srcCompat="@drawable/kisspng_pizza_italian_cuisine_ham_bacon_take_out_ciciampaposs_pizza_menu_51_n_27th_street_5c8b07d0a0f532_9056082715526153766593" />
                 </LinearLayout>
 
@@ -164,6 +166,7 @@
                         android:id="@+id/txtTotal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorLight"
                         android:textColor="#000000"
                         android:textSize="24sp" />
 
@@ -171,6 +174,7 @@
                         android:id="@+id/txtDes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorLight"
                         android:textColor="#000000"
                         android:textSize="24sp" />
 
@@ -179,6 +183,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="186dp"
+                    android:background="@color/colorLight"
                     android:orientation="vertical">
 
                     <Button

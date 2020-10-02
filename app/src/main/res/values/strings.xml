@@ -62,4 +62,26 @@
     <string name="btn_update">UPDATE</string>
     <string name="title_view_item">View Item</string>
     <string name="txt_searchid">Enter Item ID</string>
+
+    <string name="txt_deliveryR">Delivery Management</string>
+    <string name="btn_assignR">Assign Order to Rider</string>
+    <string name="btn_ManageR">Manage Rider</string>
+    <string name="btn_AddR">Add new Rider</string>
+    <string name="txt_AssignR">Assign Order to Rider</string>
+    <string name="txt_orderIDR">Order ID</string>
+    <string name="txt_riderIDR">Rider ID</string>
+    <string name="btn_addR">ADD</string>
+    <string name="btn_deleteOR">DELETE</string>
+    <string name="btn_updateR">UPDATE</string>
+    <string name="txt_searchR">Search Rider ID</string>
+    <string name="btn_searchR">SEARCH</string>
+    <string name="txt_nameR">Name</string>
+    <string name="txt_phoneR">Phone</string>
+    <string name="txt_emailR">Email</string>
+    <string name="txt_deliveredOR">Delivered Orders</string>
+    <string name="txt_DeliveredOR">No. Of Delivered Orders</string>
+    <string name="btn_deleteR">DELETE</string>
+    <string name="txt_registrationR">Rider Registration</string>
+    <string name="txt_bikeR">Bike No</string>
+    <string name="btn_registerR">REGISTER</string>
 </resources>

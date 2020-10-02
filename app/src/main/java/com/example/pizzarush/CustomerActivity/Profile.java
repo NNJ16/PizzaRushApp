@@ -1,7 +1,9 @@
 package com.example.pizzarush.CustomerActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pizzarush.Entity.Customer;
 import com.example.pizzarush.Entity.CustomerUtil;
+import com.example.pizzarush.OrderActivity.place_order_beverages;
 import com.example.pizzarush.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -175,7 +178,16 @@ public class Profile extends AppCompatActivity implements PasswordDialog.Passwor
         DeleteDialog deleteDialog = new DeleteDialog();
         deleteDialog.show(getSupportFragmentManager(),"Delete Dialog");
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if(item.getItemId() == R.id.menu)
+        {
+            Intent intent = new Intent(Profile.this,menu.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     public void applyText(String pwd) {
         txtPass.setText(pwd);
