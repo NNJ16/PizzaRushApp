@@ -39,6 +39,7 @@ public class DeleteDialog extends AppCompatDialogFragment {
                 .setPositiveButton("Remove", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        //Delete Customer
                         DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Customer");
                         DatabaseReference delRefP = FirebaseDatabase.getInstance().getReference().child("Point");
                         delRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -57,6 +58,7 @@ public class DeleteDialog extends AppCompatDialogFragment {
 
                             }
                         });
+                        //Delete Customer's points
                         delRefP.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

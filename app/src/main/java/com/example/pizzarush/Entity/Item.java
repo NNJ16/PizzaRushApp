@@ -6,7 +6,7 @@ public class Item {
     String ingre;
     String description;
     String type;
-    int price;
+    String price;
 
 
 //    public String getImgid() {
@@ -57,15 +57,15 @@ public class Item {
         this.type = type;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public Item(String id, String name, String ingre, String description, String type, int price) {
+    public Item(String id, String name, String ingre, String description, String type, String price) {
         this.id = id;
         this.name = name;
         this.ingre = ingre;

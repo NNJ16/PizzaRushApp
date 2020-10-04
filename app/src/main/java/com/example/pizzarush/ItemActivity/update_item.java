@@ -115,10 +115,10 @@ public class update_item extends AppCompatActivity implements AdapterView.OnItem
                         String itype = spinnerItemType.getSelectedItem().toString();
                         int iprice = Integer.parseInt(price.getText().toString());
 //                      String iimgid = imgid.getText().toString();
-
+                        String nprice = getPrice(iprice);
 
                         if (dataSnapshot.hasChild(iid)) {
-                            itm = new Item(iid, iname, iingre, idescription, itype, iprice);
+                            itm = new Item(iid, iname, iingre, idescription, itype, nprice);
                             dbref = FirebaseDatabase.getInstance().getReference().child("Item").child(iid);
                             dbref.setValue(itm);
                             clearControlls();
@@ -136,10 +136,12 @@ public class update_item extends AppCompatActivity implements AdapterView.OnItem
                 });
             }
         });
-
-
         }
-
+    public String getPrice(int price)
+    {
+        String nprice = "Rs."+ Integer.toString(price);
+        return nprice;
+    }
 
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
         if (adapterView.getId() == R.id.spinnerItemType)

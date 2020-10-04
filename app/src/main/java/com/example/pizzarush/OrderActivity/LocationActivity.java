@@ -58,14 +58,13 @@ public class LocationActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Add Location Details
                 String iid = address.getText().toString();
                 if (iid.equals("")) {
                     Toast.makeText(getApplicationContext(), "You did not enter your address", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 dbref= FirebaseDatabase.getInstance().getReference().child("Location");
-
                 String sid = cid.getText().toString();
                 String saddress = address.getText().toString();
                 dbref.child(sid).setValue(saddress);

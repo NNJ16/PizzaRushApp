@@ -40,7 +40,6 @@ public class AssignR extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final boolean[] isSucees = {false};
                 final String riderID = riderId.getText().toString();
                 final DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Rider").child(riderID);
 
@@ -57,9 +56,10 @@ public class AssignR extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.hasChildren())
                                 {
+                                    //Assign Rider to Order
                                     dbref= FirebaseDatabase.getInstance().getReference().child("Assign");
                                     final String orderid=orderId.getText().toString();
-                                    String rideid=riderId.getText().toString();
+                                    final String rideid=riderId.getText().toString();
                                     assign=new Assign(orderid, rideid);
                                     DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Order").child(orderid);
                                     readRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -68,7 +68,7 @@ public class AssignR extends AppCompatActivity {
                                             if(dataSnapshot.hasChildren())
                                             {
                                                 dbref.child(orderid).setValue(assign);
-                                                isSucees[0] =true;
+                                                incrementNoOfOrders(rideid,true);
                                                 clearControls();
                                                 Toast.makeText(getApplicationContext(),"Rider Assigned Successfully",Toast.LENGTH_LONG).show();
                                             }else
@@ -82,13 +82,6 @@ public class AssignR extends AppCompatActivity {
 
                                         }
                                     });
-                                    if(isSucees[0])
-                                    {
-                                        int n = Integer.parseInt(dataSnapshot.child("deliveredOR").getValue().toString());
-                                        n++;
-                                        dbref = FirebaseDatabase.getInstance().getReference().child("Rider");
-                                        dbref.child(riderID).child("deliveredOR").setValue(n);
-                                    }
                                 }else
                                 {
                                     Toast.makeText(getApplicationContext(),"Rider id is not available",Toast.LENGTH_LONG).show();
@@ -108,18 +101,18 @@ public class AssignR extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Delete Assign Order Details
                 DatabaseReference delRef=FirebaseDatabase.getInstance().getReference().child("Assign");
-
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String oid=orderId.getText().toString();
+                        String rid =riderId.getText().toString();
                         if (dataSnapshot.hasChild(oid)){
                             dbref=FirebaseDatabase.getInstance().getReference().child("Assign").child(oid);
                             dbref.removeValue();
-
                             Toast.makeText(getApplicationContext(),"Assigned rider deleted successfully",Toast.LENGTH_LONG).show();
-
+                            incrementNoOfOrders(rid,false);
                         }
                         else {
                             Toast.makeText(getApplicationContext(),"No assigned orders to Rider",Toast.LENGTH_LONG).show();
@@ -131,10 +124,11 @@ public class AssignR extends AppCompatActivity {
 
                     }
                 });
+
+
+
             }
         });
-
-
     }
 
     public void clearControls(){
@@ -142,5 +136,31 @@ public class AssignR extends AppCompatActivity {
         riderId.setText("");
     }
 
+    public boolean incrementNoOfOrders(final String riderID, final boolean opt)
+    {
+        final boolean[] isSucces = {false};
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Rider").child(riderID);
+        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                    int n = Integer.parseInt(dataSnapshot.child("deliveredOR").getValue().toString());
+                    if(opt)
+                    {
+                        n++;
+                    }else
+                        {
+                            n--;
+                        }
+                    dbref = FirebaseDatabase.getInstance().getReference().child("Rider");
+                    dbref.child(riderID).child("deliveredOR").setValue(n);
+                    isSucces[0] =true;            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        return isSucces[0];
+    }
 }

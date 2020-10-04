@@ -108,49 +108,13 @@ public class Summary_Activity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot)
                     {
                         String sid = id.getText().toString();
-
+                        String cid = CustomerUtil.getMobile();
                         if(dataSnapshot.hasChild(sid))
                         {
                             dbref = FirebaseDatabase.getInstance().getReference().child("Order").child(sid);
                             dbref.removeValue();
-                            //Remove Customer Points
-                            String cusid = CustomerUtil.getCid();
-                            DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Point").child(cusid);
-                            readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if(dataSnapshot.hasChildren())
-                                    {
-                                        String mLevel = dataSnapshot.child("mLevel").getValue().toString();
-                                        int points = Integer.parseInt(dataSnapshot.child("points").getValue().toString());
-                                        points -= 50;
-
-                                        if(points>500)
-                                        {
-                                            mLevel = "Silver";
-                                        }else if(points>1000)
-                                        {
-                                            mLevel = "Gold";
-                                        }else if(points>2000)
-                                        {
-                                            mLevel = "Platinum";
-                                        }else if(points>5000)
-                                        {
-                                            mLevel = "Diamond";
-                                        }
-                                        Point point = new Point(mLevel,points);
-                                        String cid = CustomerUtil.getCid();
-                                        dbref = FirebaseDatabase.getInstance().getReference().child("Point").child(cid);
-                                        dbref.setValue(point);
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                }
-                            });
-
+                            String custId = CustomerUtil.getCid();
+                            updateUserPoints(custId);
                             Toast.makeText(getApplicationContext(),"Delete Successfully ",Toast.LENGTH_SHORT).show();
                             Intent intent =new Intent (Summary_Activity.this, Order_Menu_Activity.class);
                             startActivity(intent);
@@ -169,6 +133,53 @@ public class Summary_Activity extends AppCompatActivity {
                 });
             }
         });
+    }
+    public boolean updateUserPoints(final String cid)
+    {
+        final boolean[] isSuccess = {false};
+        DatabaseReference readRefP = FirebaseDatabase.getInstance().getReference().child("Point").child(cid);
+        //Add Customer Points
+        readRefP.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.hasChildren())
+                {
+                    String mLevel = dataSnapshot.child("mLevel").getValue().toString();
+                    int points = Integer.parseInt(dataSnapshot.child("points").getValue().toString());
+                    points -= 50;
+                    mLevel = getMemberLevel(points);
+                    Point point = new Point(mLevel,points);
+                    dbref = FirebaseDatabase.getInstance().getReference().child("Point").child(cid);
+                    dbref.setValue(point);
+                    isSuccess[0] =true;
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        return isSuccess[0];
+    }
+
+    public String getMemberLevel(int points)
+    {
+        if(points>500)
+        {
+            return  "Silver";
+        }else if(points>1000)
+        {
+            return  "Gold";
+        }else if(points>2000)
+        {
+            return  "Platinum";
+        }else if(points>5000)
+        {
+            return  "Diamond";
+        }else
+        {
+            return  " ";
+        }
     }
     public void clearController()
     {

@@ -91,11 +91,11 @@ public class add_item extends AppCompatActivity implements AdapterView.OnItemSel
 //                                       String itype = spinnerItemType.getText().toString();
                                        String itype = spinnerItemType.getSelectedItem().toString();
                                        int iprice = Integer.parseInt(price.getText().toString());
-
+                                        String newprice = getPrice(iprice);
 
 //                                       String iimgid = imgid.getText().toString();
 
-                                       itm = new Item(iid, iname, iingre, idescription, itype, iprice);
+                                       itm = new Item(iid, iname, iingre, idescription, itype, newprice);
 
                                        dbref.child(iid).setValue(itm);
 
@@ -120,6 +120,11 @@ public class add_item extends AppCompatActivity implements AdapterView.OnItemSel
 //            }
 //        });
 
+        }
+        public String getPrice(int price)
+        {
+            String nprice = "Rs."+ Integer.toString(price)+".00";
+            return nprice;
         }
 
 //        private String getExtension(Uri uri)

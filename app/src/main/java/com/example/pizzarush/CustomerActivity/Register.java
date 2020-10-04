@@ -89,15 +89,13 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Confirm your password",Toast.LENGTH_SHORT).show();
                 }else
                     {
+                        //Customer Registration
                         String fname =txtFname.getText().toString();
                         String lname = txtLname.getText().toString();
                         String email = txtEmail.getText().toString();
                         String mobile = txtMobile.getText().toString();
                         String pass = txtPass1.getText().toString();
                         String cpass = txtPass2.getText().toString();
-
-
-
                         if(pass.equals(cpass))
                         {
                             String cid = CustomerUtil.generateCid(email);

@@ -56,6 +56,7 @@ public class regRider extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Enter Bike No",Toast.LENGTH_SHORT).show();
                 }else
                     {
+                        //Add Rider Details
                         dbref= FirebaseDatabase.getInstance().getReference().child("Rider");
                         String rid=rId.getText().toString();
                         String rname=rName.getText().toString();

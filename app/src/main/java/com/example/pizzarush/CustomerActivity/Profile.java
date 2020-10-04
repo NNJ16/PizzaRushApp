@@ -55,6 +55,7 @@ public class Profile extends AppCompatActivity implements PasswordDialog.Passwor
         btnDel = findViewById(R.id.btnDelAcc);
 
         final String cid = CustomerUtil.getCid();
+        //Read Customer's Data
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Customer").child(cid);
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -75,8 +76,8 @@ public class Profile extends AppCompatActivity implements PasswordDialog.Passwor
             }
         });
 
+        //Read Customer Points
         DatabaseReference readRefP = FirebaseDatabase.getInstance().getReference().child("Point").child(cid);
-
         readRefP.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -125,6 +126,7 @@ public class Profile extends AppCompatActivity implements PasswordDialog.Passwor
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Customer Update
                 DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Customer");
                 updRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

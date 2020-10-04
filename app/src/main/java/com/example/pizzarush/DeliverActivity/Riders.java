@@ -50,8 +50,8 @@ public class Riders extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String srid=srId.getText().toString();
+                //Search Rider Details
                 DatabaseReference readref= FirebaseDatabase.getInstance().getReference().child("Rider").child(srid);
-
                 readref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -76,7 +76,6 @@ public class Riders extends AppCompatActivity {
                 });
             }
         });
-
         updateR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,6 +101,7 @@ public class Riders extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"Enter delivered Orders",Toast.LENGTH_SHORT).show();
                         }else
                         {
+                            //Update Rider Details
                             String rid=rId.getText().toString();
                             String rname=rName.getText().toString();
                             int rphone=Integer.parseInt(rPhone.getText().toString());
@@ -142,8 +142,8 @@ public class Riders extends AppCompatActivity {
         deleteR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Delete Rider Details
                 DatabaseReference delRef=FirebaseDatabase.getInstance().getReference().child("Rider");
-
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
